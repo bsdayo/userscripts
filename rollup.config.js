@@ -24,7 +24,8 @@ function buildMetaString(meta) {
 const pkg = readJSON('package.json')
 
 // clean dist
-fs.readdirSync('dist').forEach((file) => fs.rmSync(`dist/${file}`))
+if (fs.existsSync('dist'))
+  fs.readdirSync('dist').forEach((file) => fs.rmSync(`dist/${file}`))
 
 export default fs
   .readdirSync('src', { withFileTypes: true })
