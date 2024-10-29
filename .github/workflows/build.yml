@@ -1,0 +1,39 @@
+name: Build scripts
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build scripts
+        run: pnpm run build
+
+      - name: Checkout scripts branch
+        uses: actions/checkout@v4
+        with:
+          ref: scripts
+          path: scripts
+
+      - name: Commit to scripts branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          cd scripts
+          git rm -rf *
+          cp -r ../dist/* .
+          git add .
+          git commit -m "Update scripts"
+          git push

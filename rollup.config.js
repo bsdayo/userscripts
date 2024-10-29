@@ -14,8 +14,7 @@ function buildMetaString(meta) {
   for (const [key, value] of Object.entries(meta)) {
     if (typeof value === 'string') {
       lines.push(`// @${key} ${value}`)
-    } else {
-      // array
+    } else if (Array.isArray(value)) {
       value.forEach((item) => lines.push(`// @${key} ${item}`))
     }
   }
@@ -34,12 +33,16 @@ export default fs
     const meta = readJSON(`src/${ent.name}/meta.json`)
     meta.namespace = pkg.namespace
     meta.author = pkg.author
+    meta.license = pkg.license
+
+    const metaStr = buildMetaString(meta)
 
     return {
       input: `src/${ent.name}/index.ts`,
       output: {
         file: `dist/${ent.name}.${meta.version}.user.js`,
         format: 'iife',
+        banner: metaStr,
       },
       plugins: [
         resolve({
@@ -48,11 +51,11 @@ export default fs
         json(),
         typescript(),
         commonjs(),
-        terser({
-          format: {
-            preamble: buildMetaString(meta),
-          },
-        }),
+        // terser({
+        //   format: {
+        //     preamble: metaStr,
+        //   },
+        // }),
       ],
     }
   })
