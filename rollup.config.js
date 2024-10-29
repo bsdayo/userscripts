@@ -41,7 +41,7 @@ export default fs
     return {
       input: `src/${ent.name}/index.ts`,
       output: {
-        file: `dist/${ent.name}.${meta.version}.user.js`,
+        file: `dist/${ent.name}.user.js`,
         format: 'iife',
         banner: metaStr,
       },
