@@ -39,5 +39,10 @@ jobs:
           git rm -rf *
           cp -r ../dist/* .
           git add .
+
+          if git diff --quiet; then
+            exit 0
+          fi
+
           git commit -m "Update scripts"
           git push
