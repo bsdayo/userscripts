@@ -35,6 +35,7 @@ export default fs
     meta.namespace = pkg.namespace
     meta.author = pkg.author
     meta.license = pkg.license
+    meta.homepage = `${pkg.namespace}/tree/main/src/${ent.name}`
 
     const metaStr = buildMetaString(meta)
 

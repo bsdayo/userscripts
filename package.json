@@ -1,6 +1,6 @@
 {
   "name": "userscripts",
-  "namespace": "https://bsdayo.moe",
+  "namespace": "https://github.com/bsdayo/userscripts",
   "description": "Self-use scripts for website modification",
   "author": "bsdayo",
   "license": "MIT",
