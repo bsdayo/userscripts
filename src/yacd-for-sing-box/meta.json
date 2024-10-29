@@ -1,6 +1,6 @@
 {
   "name": "Yacd modification for sing-box",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hide some unusable elements for sing-box in Yacd.",
   "match": ["*://yacd.haishan.me/*"],
   "icon": "https://www.google.com/s2/favicons?sz=64&domain=yacd.haishan.me"

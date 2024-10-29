@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      cash-dom:
-        specifier: ^8.1.5
-        version: 8.1.5
     devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^28.0.1
@@ -227,9 +223,6 @@ packages:
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
-
-  cash-dom@8.1.5:
-    resolution: {integrity: sha512-/BS05CfzyHR5xT2ksKj1sDLPaOv5rSmIwoGxNgdKwUtnIuiJ5neMxVEmZxvfyJiSjGbOMD0Lwe+9v+fszDqHew==}
 
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
@@ -474,8 +467,6 @@ snapshots:
   acorn@8.14.0: {}
 
   buffer-from@1.1.2: {}
-
-  cash-dom@8.1.5: {}
 
   commander@2.20.3: {}
 
